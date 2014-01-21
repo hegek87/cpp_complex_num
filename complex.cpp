@@ -43,6 +43,14 @@ double Complex::modulus() const{
 bool Complex::equals(const Complex& other) const{
 	return this->real == other.real && this->imag == other.imag;
 }
+
+Complex Complex::pow(int exp){
+	if(exp == 0){
+		return Complex(1,0);
+	}
+	return *this * this->pow(exp-1);
+}
+
 std::ostream& operator<<(std::ostream& os, const Complex& other){
 	if(other.real == 0){
 		if(other.imag == 0){ os << 0; return os; }
@@ -58,7 +66,7 @@ std::ostream& operator<<(std::ostream& os, const Complex& other){
 	}
 	else{
 		os << ((other.imag < 0) ? " - " : " + ");
-		os << other.imag << "i";
+		os << std::abs(other.imag) << "i";
 	}
 	return os;
 }

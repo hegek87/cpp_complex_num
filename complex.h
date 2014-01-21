@@ -21,5 +21,7 @@ class Complex{
 		double modulus()const ;
 		
 		bool equals(const Complex&) const;
+		
+		Complex pow(int);
 };
 #endif
