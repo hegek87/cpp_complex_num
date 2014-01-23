@@ -1,6 +1,7 @@
 #ifndef COMPLEX_H
 #define COMPLEX_H
 #include <iostream>
+
 class Complex{
 	private:
 		double real;
@@ -24,4 +25,8 @@ class Complex{
 		
 		Complex pow(int);
 };
+
+static const Complex ZERO(0,0);
+static const Complex ONE(1,0);
+static const Complex IM_ONE(0,1);
 #endif
