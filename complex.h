@@ -19,7 +19,8 @@ class Complex{
 		double getReal() const;
 		double getImag() const;
 		
-		double modulus()const ;
+		double modulus() const;
+		double modSquared() const;
 		
 		bool equals(const Complex&) const;
 		

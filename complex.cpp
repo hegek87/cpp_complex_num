@@ -28,6 +28,10 @@ Complex Complex::operator*(const Complex& other){
 	return Complex(prodRe, prodIm);
 }
 
+double Complex::modSquared() const{
+	return (this->real * this->real) + (this->imag * this->imag);
+}
+
 
 const Complex Complex::conjugate() const{
 	return Complex(this->real, -this->imag);
@@ -36,9 +40,7 @@ const Complex Complex::conjugate() const{
 double Complex::getReal() const{ return this->real; }
 double Complex::getImag() const{ return this->imag; }
 		
-double Complex::modulus() const{
-	return sqrt((this->real * this->real) + (this->imag * this->imag));
-}
+double Complex::modulus() const{ return sqrt(modSquared()); }
 		
 bool Complex::equals(const Complex& other) const{
 	return this->real == other.real && this->imag == other.imag;
