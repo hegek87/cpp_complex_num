@@ -7,6 +7,7 @@ class Complex{
 		double real;
 		double imag;
 	public:
+		Complex();
 		Complex(double, double);
 		Complex operator+(const Complex&);
 		Complex operator-(const Complex&);

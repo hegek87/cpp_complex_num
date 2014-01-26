@@ -3,6 +3,8 @@
 
 Complex::Complex(double re, double im) : real(re), imag(im) {}
 
+Complex::Complex() {}
+
 Complex Complex::operator+(const Complex& other){
 	double sumRe = this->real + other.real;
 	double sumIm = this->imag + other.imag;
@@ -43,7 +45,9 @@ double Complex::getImag() const{ return this->imag; }
 double Complex::modulus() const{ return sqrt(modSquared()); }
 		
 bool Complex::equals(const Complex& other) const{
-	return this->real == other.real && this->imag == other.imag;
+	double realDif = std::abs(this->real - other.real);
+	double imDif = std::abs(this->imag - other.imag);
+	return (realDif < 0.001 && imDif < 0.001);
 }
 
 Complex Complex::pow(int exp){
