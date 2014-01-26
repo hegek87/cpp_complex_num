@@ -1,7 +1,7 @@
 #include "complex.h"
 #include <cmath>
 
-Complex::Complex(double re, double im){ real = re; imag = im; }
+Complex::Complex(double re, double im) : real(re), imag(im) {}
 
 Complex Complex::operator+(const Complex& other){
 	double sumRe = this->real + other.real;
